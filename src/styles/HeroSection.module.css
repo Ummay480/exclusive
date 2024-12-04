@@ -1,0 +1,11 @@
+.hero {
+    text-align: center;
+    background-color: #f0f4f8;
+  }
+  
+  .heroImage {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  

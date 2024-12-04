@@ -1,0 +1,64 @@
+.image-overlay {
+  width: 100%; /* Adjust width if needed */
+  height: 345px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Glass overlay effect */
+.glass-overlay {
+  position: absolute;
+  width: 300px;
+  inset: 0;
+  background: rgba(107, 183, 202, 0.3); /* Semi-transparent white */
+  backdrop-filter: blur(6px); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Space between overlay content and the right edge */
+  margin-left:708px ;
+}
+
+/* Text container styling */
+.text-container {
+  width: 200px;
+  color: white;
+  text-align: left;
+}
+
+/* Title styling */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: 15px;
+  margin-top: 0px;
+}
+
+/* Subtitle styling */
+.subtitle {
+  font-size: 20px;
+  line-height: 2rem;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-left: 20px;
+  margin-top: -8px;
+}
+
+/* Button styling */
+.show-products-button {
+  padding: 10px 20px;
+  color: #FFFFFF; /* Dark blue */
+  font-weight: 500;
+  background:none;
+  border: non;
+  border-color: #f6f6f6;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 30px;
+}
+
+.show-products-button:hover {
+  color: #f3f3f3;
+}

@@ -1,0 +1,51 @@
+.gridSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px; /* Padding left and right 40px */
+  background-color: #f9f9f9;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row for large screens */
+  gap: 10px;
+  width: 100%;
+  margin: 10px;
+}
+
+.grid > :nth-child(n) {
+  width: 100%; /* Each item takes the full width of the grid cell */
+}
+
+/* For large screens: 3 images in the first row and 2 in the second */
+.grid > :nth-child(4) {
+  grid-column: span 2; /* The 4th item will take up the first 2 columns in the second row */
+}
+
+.grid > :nth-child(5) {
+  grid-column: span 1; /* The 5th item will take up the last column in the second row */
+}
+
+/* Medium screens: 2 items per row */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row for medium screens */
+  }
+
+  .grid > :nth-child(4) {
+    grid-column: span 1; /* 4th item spans only 1 column */
+  }
+}
+
+/* Small screens: 1 item per row */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1 item per row for small screens */
+  }
+}

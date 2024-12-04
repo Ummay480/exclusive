@@ -1,0 +1,92 @@
+/* AboutUs page styling */
+.aboutUsContainer {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .heroSection {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .sectionContent {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+  
+  .missionSection,
+  .teamSection,
+  .valuesSection,
+  .contactSection {
+    margin-bottom: 60px;
+  }
+  
+  .teamMembers {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  
+  .teamMember {
+    text-align: center;
+  }
+  
+  .teamMember img {
+    border-radius: 50%;
+  }
+  
+  .teamMember h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+  }
+  
+  .teamMember p {
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  .valuesList {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .valuesList li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .contactLink {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0070f3;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+  
+  .contactLink:hover {
+    background-color: #005bb5;
+  }
+  
