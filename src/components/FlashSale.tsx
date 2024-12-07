@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { BsArrowLeftShort, BsArrowRightShort } from "react-icons/bs";
 
-const Products = () => {
+const FlashSale = () => {
   const [day, setDay] = useState(1);
   const [hour, setHour] = useState(12);
   const [minute, setMinute] = useState(45);
@@ -80,4 +80,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default FlashSale;

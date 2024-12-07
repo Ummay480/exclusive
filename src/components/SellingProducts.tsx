@@ -6,7 +6,7 @@ type ProductGridProps = {
   title: string; 
 };
 
-const ProductGrid: React.FC<ProductGridProps> = ({ title }) => { 
+const BestProducts: React.FC<ProductGridProps> = ({ title }) => { 
   const products = [ 
     { 
       image: "/images/image-24.jpeg", 
@@ -74,4 +74,4 @@ const ProductGrid: React.FC<ProductGridProps> = ({ title }) => {
   );
 };
 
-export default ProductGrid;
+export default BestProducts;

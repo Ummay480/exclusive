@@ -1,71 +1,105 @@
-"use client"
+'use client'; // Ensure client-side rendering
+
 import React, { useState } from 'react';
-import './styles/Navbar.css';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation'; // Correct import for App Router
+import Link from 'next/link'; // Import Link for navigation
+import { CiHeart, CiSearch } from "react-icons/ci";
+import { IoCartOutline } from "react-icons/io5";
+
 
 const Navbar: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [showSearchBar, setShowSearchBar] = useState(false);
   const router = useRouter();
 
+  // State to toggle the search input visibility
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // Handle login button click
   const handleLoginClick = () => {
-    // Redirect to the login page
-    router.push('/login');
+    router.push('/login'); // Redirect to login page
   };
 
+  // Handle search button click to toggle input visibility
   const handleSearchClick = () => {
-    setShowSearchBar(!showSearchBar); // Toggle the search bar visibility
-  };
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery) {
-      // You can implement your search logic here or redirect to a search results page
-      alert(`Searching for: ${searchQuery}`);
-      setSearchQuery('');
-    }
+    setIsSearchOpen(!isSearchOpen); // Toggle search input visibility
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar-brand">Mansoury.</div>
-      <ul className="navbar-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Pages</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-      <div className="navbar-actions">
-        <button className="register-button" onClick={handleLoginClick}>
-          {/* User icon before 'Register' text */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon user-icon">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-            <circle cx="12" cy="7" r="4" />
-          </svg>
-          Login / Register
-        </button>
-        <button className="icon-button border-button" onClick={handleSearchClick}>
-          {/* Search icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon">
-            <circle cx="10" cy="10" r="7" />
-            <line x1="21" y1="21" x2="15" y2="15" />
-          </svg>
-        </button>
+    <nav className="flex justify-between items-center p-4 px-32 text-gray-800 bg-white">
+      {/* Logo */}
+      <div className="text-lg font-bold">
+        <Link href="/" passHref>
+          Exclusive
+        </Link>
       </div>
+
+      {/* Navigation links */}
+      <ul className="flex item-center space-x-6 ml-12">
+        <li>
+          <Link href="/" passHref>
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link href="/pages" passHref>
+            Pages
+          </Link>
+        </li>
+        <li>
+          <Link href="/aboutUs" passHref>
+            About Us
+          </Link>
+        </li>
+        <li>
+          <Link href="/contact" passHref>
+            Contact Us
+          </Link>
+        </li>
+      </ul>
+
+      {/* Right-side action buttons (Cart, Search, Wishlist) */}
+      <div className="flex items-center space-x-2 ">
+
       
-      {showSearchBar && (
-        <form onSubmit={handleSearchSubmit} className="search-form">
+        {/* Search Block */}
+        <div className="relative">
+      <button
+        className="flex items-center space-x-1 px-2 py-2 border-none text-gray-800 hover:text-red-600"
+        onClick={handleSearchClick}
+      >
+        <CiSearch className="w-6 h-6" />
+      </button>
+
+      {/* Conditional Search Input */}
+      {isSearchOpen && (
+        <div className="absolute top-full mt-2 bg-white text-black hover-red-500">
           <input
             type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search..."
-            className="search-input"
+            className="px-1 py-1 rounded border-2 focus:outline-1"
+            onBlur={() => setIsSearchOpen(false)} // Close input when focus is lost
           />
-          <button type="submit" className="search-button">Search</button>
-        </form>
+        </div>
       )}
+        </div>
+
+        {/* Wishlist Block */}
+        <Link href="/wishlist" passHref>
+      <button className="flex items-center space-x-2 px-2 py-2 border-none text-gray-800 hover:text-red-600">
+        <CiHeart className="w-6 h-6" />
+         </button>
+    </Link>
+
+        {/* Cart Block */}
+        <Link href="/cart" passHref>
+      <button className="relative flex items-center space-x-2 px-4 py-2 border-none text-gray-800 hover:bg-slate-600">
+        <IoCartOutline className="w-6 h-6" />
+        <span className="absolute top-0 right-0 text-xs font-bold text-red-600 bg-white rounded-full px-2 py-1">
+          0
+        </span>
+      </button>
+    </Link>
+
+      </div>
     </nav>
   );
 };
