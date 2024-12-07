@@ -7,7 +7,7 @@ import { FaApple } from "react-icons/fa";
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="flex flex-col md:flex-row bg-gray-100" >
+    <section className="flex flex-col md:flex-row bg-gray-100">
       {/* Left Sidebar */}
       <div className="flex-none w-[1440px] h-16 md:w-1/4 gap-6 justify-center -mt-5 mb-20 ml-10">
         <div className="h-full p-6">
@@ -16,7 +16,7 @@ const HeroSection: React.FC = () => {
       </div>
 
       {/* Main Content on the Right */}
-      <div className="flex flex-col justify-center items-start mx-10 mb-10 w-full md:w-3/4 h-96 bg-black text-white py-">
+      <div className="flex flex-col justify-center items-start mx-10 mb-10 w-full md:w-3/4 h-96 bg-black text-white">
         {/* Text Content */}
         <div className="flex flex-col items-start space-y-6">
           <div className="flex items-center mt-16 ml-6 -mb-10">
