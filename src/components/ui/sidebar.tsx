@@ -12,11 +12,11 @@ const Sidebar: React.FC = () => {
       {/* Sidebar Menu */}
 <ul className="space-y-0 ">
   <li className="hover:bg-gray-200 p-1 rounded-sm cursor-pointer flex justify-between items-center">
-    <span className="text-gray-700 text-sm">Woman's Fashion</span>
+    <span className="text-gray-700 text-sm">Woman&apos;s Fashion</span>
     <MdKeyboardArrowRight className="text-gray-500 text-sm" />
   </li>
   <li className="hover:bg-gray-200 p-1 rounded-sm cursor-pointer flex justify-between items-center">
-    <span className="text-gray-700 text-sm">Men's Fashion</span>
+    <span className="text-gray-700 text-sm">Men&apos;s Fashion</span>
     <MdKeyboardArrowRight className="text-gray-500 text-sm" />
   </li>
         <li className="hover:bg-gray-200 p-1 rounded-sm cursor-pointer">
@@ -32,7 +32,7 @@ const Sidebar: React.FC = () => {
           <span className="text-gray-700 text-sm">Sports & Outdoor</span>
         </li>
         <li className="hover:bg-gray-200 p-1 rounded-sm cursor-pointer">
-          <span className="text-gray-700 text-sm">Baby's Toys</span>
+          <span className="text-gray-700 text-sm">Baby&apos;s Toys</span>
         </li>
         <li className="hover:bg-gray-200 p-1 rounded-sm cursor-pointer">
           <span className="text-gray-700 text-sm">Groceries & Pets</span>

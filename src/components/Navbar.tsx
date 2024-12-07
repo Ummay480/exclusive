@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation'; // Correct import for App Router
-import Link from 'next/link'; // Import Link for navigation
+import Link from "next/link"; // Import Link for navigation
 import { CiHeart, CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 
@@ -13,17 +13,7 @@ const Navbar: React.FC = () => {
   // State to toggle the search input visibility
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-  // Handle login button click
-  const handleLoginClick = () => {
-    router.push("login"); // Redirect to login page
-  };
-
-  // Handle search button click to toggle input visibility
-  const handleSearchClick = () => {
-    setIsSearchOpen(!isSearchOpen); // Toggle search input visibility
-  };
-
-  return (
+   return (
     <nav className="flex justify-between items-center p-4 px-32 text-gray-800 bg-white">
       {/* Logo */}
       <div className="text-lg font-bold">
@@ -63,9 +53,7 @@ const Navbar: React.FC = () => {
         {/* Search Block */}
         <div className="relative">
       <button
-        className="flex items-center space-x-1 px-2 py-2 border-none text-gray-800 hover:text-red-600"
-        onClick={handleSearchClick}
-      >
+            >
         <CiSearch className="w-6 h-6" />
       </button>
 
