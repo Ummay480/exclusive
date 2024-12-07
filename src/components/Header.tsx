@@ -1,8 +1,8 @@
-&apos;use client&apos;;
+"use client";
 
 import React from "react";
 import { Button } from "./ui/button"; // Import Button
-import { MdArrowDropDown } from &apos;react-icons/md&apos;;
+import { MdArrowDropDown } from "react-icons/md";
 
 const Header: React.FC = () => {
   return (

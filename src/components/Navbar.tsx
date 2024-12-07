@@ -1,8 +1,8 @@
-&apos;use client&apos;; // Ensure client-side rendering
+"use client" // Ensure client-side rendering
 
-import React, { useState } from &apos;react&apos;;
-import { useRouter } from &apos;next/navigation&apos;; // Correct import for App Router
-import Link from &apos;next/link&apos;; // Import Link for navigation
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'; // Correct import for App Router
+import Link from 'next/link'; // Import Link for navigation
 import { CiHeart, CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 
@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
 
   // Handle login button click
   const handleLoginClick = () => {
-    router.push(&apos;/login&apos;); // Redirect to login page
+    router.push("login"); // Redirect to login page
   };
 
   // Handle search button click to toggle input visibility

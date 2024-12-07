@@ -1,6 +1,6 @@
 "use client";
-import React from &apos;react&apos;;
-import Image from &apos;next/image&apos;;  // Import the Image component
+import React from "react";
+import Image from "next/image";  // Import the Image component
 
 export function Collage() {
   return (
