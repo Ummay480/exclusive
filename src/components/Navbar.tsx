@@ -1,19 +1,15 @@
-"use client" // Ensure client-side rendering
+"use client"; // Ensure client-side rendering 
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation'; // Correct import for App Router
 import Link from "next/link"; // Import Link for navigation
 import { CiHeart, CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 
-
 const Navbar: React.FC = () => {
-  const router = useRouter();
-
   // State to toggle the search input visibility
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-   return (
+  return (
     <nav className="flex justify-between items-center p-4 px-32 text-gray-800 bg-white">
       {/* Logo */}
       <div className="text-lg font-bold">
@@ -47,46 +43,42 @@ const Navbar: React.FC = () => {
       </ul>
 
       {/* Right-side action buttons (Cart, Search, Wishlist) */}
-      <div className="flex items-center space-x-2 ">
-
-      
+      <div className="flex items-center space-x-2">
         {/* Search Block */}
         <div className="relative">
-      <button
-            >
-        <CiSearch className="w-6 h-6" />
-      </button>
+          <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
+            <CiSearch className="w-6 h-6" />
+          </button>
 
-      {/* Conditional Search Input */}
-      {isSearchOpen && (
-        <div className="absolute top-full mt-2 bg-white text-black hover-red-500">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="px-1 py-1 rounded border-2 focus:outline-1"
-            onBlur={() => setIsSearchOpen(false)} // Close input when focus is lost
-          />
-        </div>
-      )}
+          {/* Conditional Search Input */}
+          {isSearchOpen && (
+            <div className="absolute top-full mt-2 bg-white text-black">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="px-1 py-1 rounded border-2 focus:outline-1"
+                onBlur={() => setIsSearchOpen(false)} // Close input when focus is lost
+              />
+            </div>
+          )}
         </div>
 
         {/* Wishlist Block */}
         <Link href="/wishlist" passHref>
-      <button className="flex items-center space-x-2 px-2 py-2 border-none text-gray-800 hover:text-red-600">
-        <CiHeart className="w-6 h-6" />
-         </button>
-    </Link>
+          <button className="flex items-center space-x-2 px-2 py-2 border-none text-gray-800 hover:text-red-600">
+            <CiHeart className="w-6 h-6" />
+          </button>
+        </Link>
 
         {/* Cart Block */}
         <Link href="/cart" passHref>
-      <button className="relative flex items-center space-x-2 px-4 py-2 border-none text-gray-800 hover:bg-slate-600">
-        <IoCartOutline className="w-6 h-6" />
-        <span className="absolute top-0 right-0 text-xs font-bold text-red-600 bg-white rounded-full px-2 py-1">
-          0
-        </span>
-      </button>
-    </Link>
-
+          <button className="relative flex items-center space-x-2 px-4 py-2 border-none text-gray-800 hover:bg-slate-600">
+            <IoCartOutline className="w-6 h-6" />
+            <span className="absolute top-0 right-0 text-xs font-bold text-red-600 bg-white rounded-full px-2 py-1">
+              0
+            </span>
+          </button>
+        </Link>
       </div>
     </nav>
   );
