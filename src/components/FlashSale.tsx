@@ -36,7 +36,7 @@ const FlashSale = () => {
       {/* Header */}
       <div className="flex items-center space-x-2">
         <div className="w-3 h-6 bg-red-600 rounded"></div>
-        <span className="tracking-wide text-red-600">Today's</span>
+        <span className="tracking-wide text-red-600">Today&apos;s</span>
       </div>
 
       {/* Main Content */}

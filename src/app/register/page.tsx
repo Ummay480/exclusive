@@ -94,7 +94,7 @@ const Login: React.FC = () => {
             onClick={() => setIsLogin(!isLogin)}
             className="text-blue-600 hover:underline focus:outline-none"
           >
-            {isLogin ? "Don't have an account? Register" : "Already have an account? Login"}
+            {isLogin ? "Don&apos;t have an account? Register" : "Already have an account? Login"}
           </button>
         </div>
       </div>
