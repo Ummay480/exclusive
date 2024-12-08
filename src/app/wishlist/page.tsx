@@ -1,6 +1,7 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import { FaTrashAlt } from "react-icons/fa";
+import Image from "next/image"; // Import the Image component
 
 interface WishlistItem {
   id: number;
@@ -51,10 +52,13 @@ const WishlistPage: React.FC = () => {
                 className="flex items-center justify-between p-4 border-b"
               >
                 <div className="flex items-center space-x-4">
-                  <img
+                  {/* Replace img with Image component */}
+                  <Image
                     src={item.imageUrl}
                     alt={item.name}
-                    className="w-20 h-20 object-cover rounded"
+                    width={80} // Provide width for optimization
+                    height={80} // Provide height for optimization
+                    className="object-cover rounded"
                   />
                   <div>
                     <h3 className="text-lg font-semibold">{item.name}</h3>

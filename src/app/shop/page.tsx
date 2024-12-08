@@ -1,5 +1,6 @@
-"use client"
+"use client";
 import React from "react";
+import Image from "next/image"; // Import the Image component from next/image
 
 const ShopPage: React.FC = () => {
   // Sample products with images 1-38
@@ -21,10 +22,14 @@ const ShopPage: React.FC = () => {
             key={product.id}
             className="bg-white rounded-lg shadow-lg overflow-hidden transform hover:scale-105 transition duration-300"
           >
-            <img
+            {/* Use Image component from next/image */}
+            <Image
               src={product.image}
               alt={product.title}
               className="w-full h-48 object-cover"
+              width={500}  // Provide width for optimization
+              height={300} // Provide height for optimization
+              priority={true} // Optional: to prioritize this image for loading
             />
             <div className="p-4">
               <h3 className="text-lg font-semibold">{product.title}</h3>
